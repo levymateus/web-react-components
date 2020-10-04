@@ -4,6 +4,7 @@ import { MdArrowUpward, MdArrowDownward } from "react-icons/md"
 import clsx from 'clsx'
 
 import * as datefns from "date-fns"
+
 import * as reducer from "./reducer"
 import { StateReducer } from "./contants"
 
@@ -27,6 +28,12 @@ const focus = (index: number): void => {
   if (button) {
     button.focus()
   }
+}
+
+const isEqual = (left: Date, right: Date): boolean => {
+	return left.getDate() === right.getDate() &&
+		left.getMonth() === right.getMonth() &&
+		left.getFullYear() === right.getFullYear()
 }
 
 export const Calendar: React.FC<Props> = ({
@@ -160,9 +167,9 @@ export const Calendar: React.FC<Props> = ({
 				))}
 			</div>
 			<div id="calendar-dates" className="flex-row-container">
-				{datesList.map((nextDate, index) => (
+				{datesList.map((date, index) => (
 					<div
-						key={`calendar-dates-${nextDate.toDateString()}`}
+						key={`calendar-dates-${date.toDateString()}`}
 						className="flex-row-item item"
 					>
 						<button
@@ -172,26 +179,26 @@ export const Calendar: React.FC<Props> = ({
 								"button",
 								"item",
 								{ focusable },
-								selectedDate && datefns.isEqual(selectedDate, nextDate)
+								selectedDate && isEqual(selectedDate, date)
 									? "active"
 									: "selectable"
 							)}
 							onClick={(): void => {
 								setTargetDate(() => {
 									dispatch({
-										payload: nextDate,
+										payload: date,
 									});
-									setTitle(datefns.format(nextDate, "LLLL yyyy"));
-									setSelectedDate(nextDate);
+									setTitle(datefns.format(date, "LLLL yyyy"));
+									setSelectedDate(date);
 									setFocusable(false);
-									return nextDate;
+									return date;
 								});
 								if (onClick) {
-									onClick(nextDate);
+									onClick(date);
 								}
 							}}
 						>
-							{nextDate.getDate()}
+							{date.getDate()}
 						</button>
 					</div>
 				))}
