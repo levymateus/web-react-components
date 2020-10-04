@@ -1,1 +1,1 @@
-export { Calendar } from "./components/Calendar";
+export { Calendar } from './components/Calendar'
