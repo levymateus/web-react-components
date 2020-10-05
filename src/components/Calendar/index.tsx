@@ -11,7 +11,7 @@ import addMonths from 'date-fns/addMonths'
 import * as reducer from './reducer'
 import { StateReducer } from './contants'
 
-import './index.css'
+import { styles } from './style'
 
 interface Props {
   /**
@@ -117,7 +117,7 @@ export const Calendar: React.FC<Props> = ({
   }, [handleKeyDown])
 
   return (
-    <div id="calendar">
+    <div className={styles}>
       <div id="calendar-nav" className="flex-row-full">
         <div id="calendar-nav-title" className="flex-row-item">
           <div id="calendar-title">{title}</div>

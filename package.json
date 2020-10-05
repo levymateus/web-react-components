@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "clsx": "^1.1.1",
-    "date-fns": "^2.16.1"
+    "date-fns": "^2.16.1",
+    "emotion": "^10.0.27"
   }
 }
