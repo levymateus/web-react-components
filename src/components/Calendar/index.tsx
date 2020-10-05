@@ -1,6 +1,6 @@
 import React from 'react'
 import { MdArrowUpward, MdArrowDownward } from 'react-icons/md'
-import clsx from 'clsx'
+import { cx } from 'emotion'
 
 import format from 'date-fns/format'
 import subDays from 'date-fns/subDays'
@@ -178,7 +178,7 @@ export const Calendar: React.FC<Props> = ({
             <button
               id={`calendar-date-button-${index}`}
               type="button"
-              className={clsx(
+              className={cx(
                 'button',
                 'item',
                 { focusable },
