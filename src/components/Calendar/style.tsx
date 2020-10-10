@@ -1,4 +1,21 @@
 import { css } from 'emotion'
+import styled from '@emotion/styled'
+
+export const Button = styled.button`
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  font-size: 1em;
+  color: rgb(77, 77, 77);
+  outline: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 2px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 export const styles = css`
   width: 256px;

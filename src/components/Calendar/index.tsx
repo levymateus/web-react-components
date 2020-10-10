@@ -11,7 +11,7 @@ import addMonths from 'date-fns/addMonths'
 import * as reducer from './reducer'
 import { StateReducer } from './contants'
 
-import { styles } from './style'
+import { styles, Button } from './style'
 
 interface Props {
   /**
@@ -175,12 +175,10 @@ export const Calendar: React.FC<Props> = ({
             key={`calendar-dates-${date.toDateString()}`}
             className="flex-row-item item"
           >
-            <button
+            <Button
               id={`calendar-date-button-${index}`}
               type="button"
               className={cx(
-                'button',
-                'item',
                 { focusable },
                 selectedDate && isEqual(selectedDate, date)
                   ? 'active'
@@ -202,7 +200,7 @@ export const Calendar: React.FC<Props> = ({
               }}
             >
               {date.getDate()}
-            </button>
+            </Button>
           </div>
         ))}
       </div>
