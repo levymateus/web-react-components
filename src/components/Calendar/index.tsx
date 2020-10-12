@@ -20,10 +20,10 @@ interface Props {
   defaultValue?: Date
 
   /**
-   * The optional click event callback fired when an date selected.
+   * The optional on change handler callback fired when an date is changed.
    * @param date - The selected date.
    */
-  onClick?: (date: Date) => void
+  onChange?: (date: Date) => void
 }
 
 const focus = (index: number): void => {
@@ -43,7 +43,7 @@ const isEqual = (left: Date, right: Date): boolean => {
 
 export const Calendar: React.FC<Props> = ({
   defaultValue = new Date(),
-  onClick
+  onChange
 }: Props) => {
   const [date, setDate] = React.useState(defaultValue)
   const [title, setTitle] = React.useState(format(date, 'LLLL yyyy'))
@@ -220,8 +220,8 @@ export const Calendar: React.FC<Props> = ({
                   }
                   return dateEl
                 })
-                if (onClick) {
-                  onClick(dateEl)
+                if (onChange) {
+                  onChange(dateEl)
                 }
               }}
             >
