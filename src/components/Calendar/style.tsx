@@ -81,9 +81,9 @@ export const styles = css`
     cursor: pointer;
     outline: none;
   }
-	.wiped-out {
-		color: rgb(150, 150, 150);
-	}
+  .wiped-out {
+    color: rgb(150, 150, 150);
+  }
   .selectable {
     cursor: pointer;
   }
