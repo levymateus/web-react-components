@@ -45,13 +45,13 @@ export const Calendar: React.FC<Props> = ({
   defaultValue = new Date(),
   onClick
 }: Props) => {
-  const [targetDate, setTargetDate] = React.useState(defaultValue)
-  const [title, setTitle] = React.useState(format(targetDate, 'LLLL yyyy'))
-  const [selectedDate, setSelectedDate] = React.useState<Date | null>(targetDate)
+  const [date, setDate] = React.useState(defaultValue)
+  const [title, setTitle] = React.useState(format(date, 'LLLL yyyy'))
+  const [selectedDate, setSelectedDate] = React.useState<Date | null>(date)
   const [focusable, setFocusable] = React.useState(false)
   const [datesList, dispatch] = React.useReducer<StateReducer<Date[], string>, Date>(
     reducer.reducer,
-    targetDate,
+    date,
     reducer.initializer
   )
 
@@ -60,46 +60,62 @@ export const Calendar: React.FC<Props> = ({
       setFocusable(true)
       switch (event.key) {
         case 'ArrowLeft':
-          setTargetDate((prevDate) => {
+          setDate((prevDate) => {
             const nextDate = subDays(prevDate, 1)
-            setTitle(format(nextDate, 'LLLL yyyy'))
-            const focusedIndex = datesList.findIndex((date) =>
+            const index = datesList.findIndex((date) =>
               isEqual(date, nextDate)
             )
-            focus(focusedIndex)
+            if (index <= 0 || index >= (datesList.length - 1)) {
+              setTitle(format(nextDate, 'LLLL yyyy'))
+              dispatch({
+                payload: nextDate
+              })
+            }
             return nextDate
           })
           break
         case 'ArrowRight':
-          setTargetDate((prevDate) => {
+          setDate((prevDate) => {
             const nextDate = addDays(prevDate, 1)
-            setTitle(format(nextDate, 'LLLL yyyy'))
-            const focusedIndex = datesList.findIndex((date) =>
+            const index = datesList.findIndex((date) =>
               isEqual(date, nextDate)
             )
-            focus(focusedIndex)
+            if (index <= 0 || index >= (datesList.length - 1)) {
+              setTitle(format(nextDate, 'LLLL yyyy'))
+              dispatch({
+                payload: nextDate
+              })
+            }
             return nextDate
           })
           break
         case 'ArrowUp':
-          setTargetDate((prevDate) => {
+          setDate((prevDate) => {
             const nextDate = subDays(prevDate, 7)
-            setTitle(format(nextDate, 'LLLL yyyy'))
-            const focusedIndex = datesList.findIndex((date) =>
+            const index = datesList.findIndex((date) =>
               isEqual(date, nextDate)
             )
-            focus(focusedIndex)
+            if (index < 0 || index > (datesList.length - 1)) {
+              setTitle(format(nextDate, 'LLLL yyyy'))
+              dispatch({
+                payload: nextDate
+              })
+            }
             return nextDate
           })
           break
         case 'ArrowDown':
-          setTargetDate((prevDate) => {
+          setDate((prevDate) => {
             const nextDate = addDays(prevDate, 7)
-            setTitle(format(nextDate, 'LLLL yyyy'))
-            const focusedIndex = datesList.findIndex((date) =>
+            const index = datesList.findIndex((date) =>
               isEqual(date, nextDate)
             )
-            focus(focusedIndex)
+            if (index <= 0 || index > (datesList.length - 1)) {
+              setTitle(format(nextDate, 'LLLL yyyy'))
+              dispatch({
+                payload: nextDate
+              })
+            }
             return nextDate
           })
           break
@@ -116,6 +132,13 @@ export const Calendar: React.FC<Props> = ({
     }
   }, [handleKeyDown])
 
+  React.useEffect(() => {
+    const index = datesList.findIndex((d) =>
+      isEqual(d, date)
+    )
+    focus(index)
+  }, [date])
+
   return (
     <div className={styles}>
       <div id="calendar-nav" className="flex-row-full">
@@ -127,7 +150,7 @@ export const Calendar: React.FC<Props> = ({
             type="button"
             className="button item selectable"
             onClick={(): void => {
-              setTargetDate((prevDate) => {
+              setDate((prevDate) => {
                 const nextDate = subMonths(prevDate, 1)
                 dispatch({
                   payload: nextDate
@@ -144,7 +167,7 @@ export const Calendar: React.FC<Props> = ({
             type="button"
             className="button item selectable"
             onClick={(): void => {
-              setTargetDate((prevDate) => {
+              setDate((prevDate) => {
                 const nextDate = addMonths(prevDate, 1)
                 dispatch({
                   payload: nextDate
@@ -170,9 +193,9 @@ export const Calendar: React.FC<Props> = ({
         ))}
       </div>
       <div id="calendar-dates" className="flex-row-container">
-        {datesList.map((date, index) => (
+        {datesList.map((dateEl, index) => (
           <div
-            key={`calendar-dates-${date.toDateString()}`}
+            key={`calendar-dates-${dateEl.toDateString()}`}
             className="flex-row-item item"
           >
             <Button
@@ -180,26 +203,29 @@ export const Calendar: React.FC<Props> = ({
               type="button"
               className={cx(
                 { focusable },
-                selectedDate && isEqual(selectedDate, date)
+                selectedDate && isEqual(selectedDate, dateEl)
                   ? 'active'
-                  : 'selectable'
+                  : 'selectable',
+                date.getMonth() !== dateEl.getMonth() ? 'wiped-out' : null
               )}
               onClick={(): void => {
-                setTargetDate(() => {
-                  dispatch({
-                    payload: date
-                  })
-                  setTitle(format(date, 'LLLL yyyy'))
-                  setSelectedDate(date)
+                setDate(() => {
+                  setSelectedDate(dateEl)
                   setFocusable(false)
-                  return date
+                  const index = datesList.findIndex((d) => isEqual(d, dateEl))
+                  if (index <= 0 || index >= (datesList.length - 1)) {
+                    dispatch({
+                      payload: dateEl
+                    })
+                  }
+                  return dateEl
                 })
                 if (onClick) {
-                  onClick(date)
+                  onClick(dateEl)
                 }
               }}
             >
-              {date.getDate()}
+              {dateEl.getDate()}
             </Button>
           </div>
         ))}
