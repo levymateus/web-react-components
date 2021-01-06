@@ -2,8 +2,7 @@
 {
 	"exclude": [
 		"node_modules",
-		"dist",
-		"./stories"
+		"dist"
 	],
 	"compilerOptions": {
 		"skipLibCheck": true,
@@ -22,6 +21,16 @@
 			"./src",
 			"./stories"
 		],
+		"allowJs": true,
+		"baseUrl": "./",
+		"paths": {
+			"@react-components/components": [
+				"./packages/components/src"
+			],
+			"@react-components/components/*": [
+				"./packages/components/src/*"
+			]
+		},
 		"strict": true,
 		"moduleResolution": "node",
 		"esModuleInterop": true,

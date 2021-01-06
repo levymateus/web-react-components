@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+				"es2021": true,
+				"jest": true
     },
     "extends": [
         "plugin:react/recommended",
@@ -24,6 +25,7 @@
 			"no-use-before-define": 0,
 			"@typescript-eslint/no-use-before-define": [
 				"error"
-			]
-    }
+			],
+			"react/prop-types": 0
+		}
 }
