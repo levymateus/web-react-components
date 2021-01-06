@@ -1,6 +1,13 @@
-const path = require("path");
+const path = require("path")
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
 
 module.exports = {
+  stories: ["../src/**/*.stories.@(ts|tsx)"],
+  addons: [
+    "@storybook/addon-docs",
+    "@storybook/addon-controls",
+    "@storybook/addon-essentials",
+  ],
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
@@ -18,8 +25,12 @@ module.exports = {
       ],
     });
 
-    config.resolve.extensions.push(".ts", ".tsx");
-
+    config.resolve.extensions.push(".ts", ".tsx", ".js")
+    config.resolve.plugins = [
+      new TsconfigPathsPlugin({
+        configFile: path.resolve(__dirname, "../tsconfig.json"),
+      }),
+    ];
     return config;
   },
 };

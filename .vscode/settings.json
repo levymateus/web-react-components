@@ -1,0 +1,9 @@
+
+{
+  "eslint.enable": true,
+	"editor.tabSize": 2,
+	"files.autoSave": "off",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	}
+}

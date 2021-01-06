@@ -1,5 +1,5 @@
-export type DayOfWeek = "iiiiii" | "iiiii" | "ii" | "io" | "i";
-export type DateTime = { date: "LLLL" | "LLL"; time: "yyyy" | "yyy" | "y" | "yo" };
+export type DayOfWeek = 'iiiiii' | 'iiiii' | 'ii' | 'io' | 'i';
+export type DateTime = { date: 'LLLL' | 'LLL'; time: 'yyyy' | 'yyy' | 'y' | 'yo' };
 
 export interface Action<T = string, P = unknown> {
   type?: T

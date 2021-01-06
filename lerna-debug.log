@@ -1,0 +1,162 @@
+0 silly argv {
+0 silly argv   _: [ 'bootstrap' ],
+0 silly argv   lernaVersion: '3.22.1',
+0 silly argv   '$0': '..\\..\\AppData\\Local\\Yarn\\Data\\global\\node_modules\\lerna\\cli.js'
+0 silly argv }
+1 notice cli v3.22.1
+2 verbose rootPath C:\Users\LevyMateusMacedo\Wokspace\wrc
+3 info versioning independent
+4 silly npmConfig {
+4 silly npmConfig   registry: undefined,
+4 silly npmConfig   npmClient: 'yarn',
+4 silly npmConfig   npmClientArgs: [],
+4 silly npmConfig   mutex: 'network:42424'
+4 silly npmConfig }
+5 info Bootstrapping 1 package
+6 verbose lifecycle preinstall
+7 silly lifecycle No script for "preinstall" in "components", continuing
+8 silly hasDependencyInstalled components @babel/plugin-proposal-class-properties
+9 silly hasDependencyInstalled components @babel/preset-env
+10 silly hasDependencyInstalled components @babel/preset-react
+11 silly hasDependencyInstalled components @emotion/css
+12 silly hasDependencyInstalled components @emotion/react
+13 silly hasDependencyInstalled components @emotion/styled
+14 silly hasDependencyInstalled components @storybook/addon-controls
+15 silly hasDependencyInstalled components @storybook/addon-docs
+16 silly hasDependencyInstalled components @storybook/addon-essentials
+17 silly hasDependencyInstalled components @storybook/addon-info
+18 silly hasDependencyInstalled components @storybook/react
+19 silly hasDependencyInstalled components @testing-library/jest-dom
+20 silly hasDependencyInstalled components @testing-library/react
+21 silly hasDependencyInstalled components @testing-library/user-event
+22 silly hasDependencyInstalled components @types/react
+23 silly hasDependencyInstalled components @typescript-eslint/eslint-plugin
+24 silly hasDependencyInstalled components @typescript-eslint/parser
+25 silly hasDependencyInstalled components babel-loader
+26 silly hasDependencyInstalled components cross-env
+27 silly hasDependencyInstalled components eslint
+28 silly hasDependencyInstalled components eslint-config-standard
+29 silly hasDependencyInstalled components eslint-plugin-import
+30 silly hasDependencyInstalled components eslint-plugin-node
+31 silly hasDependencyInstalled components eslint-plugin-promise
+32 silly hasDependencyInstalled components eslint-plugin-react
+33 silly hasDependencyInstalled components eslint-plugin-standard
+34 silly hasDependencyInstalled components react
+35 silly hasDependencyInstalled components react-docgen-typescript-loader
+36 silly hasDependencyInstalled components react-dom
+37 silly hasDependencyInstalled components react-icons
+38 silly hasDependencyInstalled components ts-loader
+39 silly hasDependencyInstalled components tsconfig-paths-webpack-plugin
+40 silly hasDependencyInstalled components typescript
+41 silly hasDependencyInstalled components @types/react-dom
+42 silly hasDependencyInstalled components @types/theme-ui
+43 silly hasDependencyInstalled components date-fns
+44 silly hasDependencyInstalled components theme
+45 silly hasDependencyInstalled components theme-ui
+46 silly root dependencies {}
+47 silly leaf dependencies {}
+48 info Installing external dependencies
+49 verbose actions 1 actions, concurrency 6
+50 silly npmInstallDependencies components [
+50 silly npmInstallDependencies   '@babel/plugin-proposal-class-properties@^7.12.1',
+50 silly npmInstallDependencies   '@babel/preset-env@^7.12.11',
+50 silly npmInstallDependencies   '@babel/preset-react@^7.12.10',
+50 silly npmInstallDependencies   '@emotion/css@^11.0.0',
+50 silly npmInstallDependencies   '@emotion/react@^11.1.1',
+50 silly npmInstallDependencies   '@emotion/styled@^11.0.0',
+50 silly npmInstallDependencies   '@storybook/addon-controls@^6.0.28',
+50 silly npmInstallDependencies   '@storybook/addon-docs@^6.0.28',
+50 silly npmInstallDependencies   '@storybook/addon-essentials@^6.0.28',
+50 silly npmInstallDependencies   '@storybook/addon-info@^5.3.18',
+50 silly npmInstallDependencies   '@storybook/react@^6.0.3',
+50 silly npmInstallDependencies   '@testing-library/jest-dom@^5.11.8',
+50 silly npmInstallDependencies   '@testing-library/react@^11.2.2',
+50 silly npmInstallDependencies   '@testing-library/user-event@^12.6.0',
+50 silly npmInstallDependencies   '@types/react@^17.0.0',
+50 silly npmInstallDependencies   '@typescript-eslint/eslint-plugin@4.0.1',
+50 silly npmInstallDependencies   '@typescript-eslint/parser@4.0.1',
+50 silly npmInstallDependencies   'babel-loader@^8.1.0',
+50 silly npmInstallDependencies   'cross-env@^7.0.3',
+50 silly npmInstallDependencies   'eslint@^7.10.0',
+50 silly npmInstallDependencies   'eslint-config-standard@^14.1.1',
+50 silly npmInstallDependencies   'eslint-plugin-import@^2.22.1',
+50 silly npmInstallDependencies   'eslint-plugin-node@^11.1.0',
+50 silly npmInstallDependencies   'eslint-plugin-promise@^4.2.1',
+50 silly npmInstallDependencies   'eslint-plugin-react@^7.21.3',
+50 silly npmInstallDependencies   'eslint-plugin-standard@^4.0.1',
+50 silly npmInstallDependencies   'react@^17.0.1',
+50 silly npmInstallDependencies   'react-docgen-typescript-loader@^3.7.2',
+50 silly npmInstallDependencies   'react-dom@^17.0.1',
+50 silly npmInstallDependencies   'react-icons@^3.11.0',
+50 silly npmInstallDependencies   'ts-loader@^6.2.2',
+50 silly npmInstallDependencies   'tsconfig-paths-webpack-plugin@^3.3.0',
+50 silly npmInstallDependencies   'typescript@^4.0.3',
+50 silly npmInstallDependencies   '@types/react-dom@^17.0.0',
+50 silly npmInstallDependencies   '@types/theme-ui@^0.3.7',
+50 silly npmInstallDependencies   'date-fns@^2.16.1',
+50 silly npmInstallDependencies   'theme@^0.1.0',
+50 silly npmInstallDependencies   'theme-ui@^0.3.5'
+50 silly npmInstallDependencies ]
+51 silly npmInstallDependencies backup C:\Users\LevyMateusMacedo\Wokspace\wrc\packages\components\package.json
+52 silly npmInstallDependencies writing tempJson {
+52 silly npmInstallDependencies   name: 'components',
+52 silly npmInstallDependencies   version: '1.0.0',
+52 silly npmInstallDependencies   description: 'Web react components core package',
+52 silly npmInstallDependencies   main: 'src/index.ts',
+52 silly npmInstallDependencies   author: 'levymateusmacedo@gmail.com',
+52 silly npmInstallDependencies   license: 'MIT',
+52 silly npmInstallDependencies   devDependencies: {
+52 silly npmInstallDependencies     '@babel/plugin-proposal-class-properties': '^7.12.1',
+52 silly npmInstallDependencies     '@babel/preset-env': '^7.12.11',
+52 silly npmInstallDependencies     '@babel/preset-react': '^7.12.10',
+52 silly npmInstallDependencies     '@emotion/css': '^11.0.0',
+52 silly npmInstallDependencies     '@emotion/react': '^11.1.1',
+52 silly npmInstallDependencies     '@emotion/styled': '^11.0.0',
+52 silly npmInstallDependencies     '@storybook/addon-controls': '^6.0.28',
+52 silly npmInstallDependencies     '@storybook/addon-docs': '^6.0.28',
+52 silly npmInstallDependencies     '@storybook/addon-essentials': '^6.0.28',
+52 silly npmInstallDependencies     '@storybook/addon-info': '^5.3.18',
+52 silly npmInstallDependencies     '@storybook/react': '^6.0.3',
+52 silly npmInstallDependencies     '@testing-library/jest-dom': '^5.11.8',
+52 silly npmInstallDependencies     '@testing-library/react': '^11.2.2',
+52 silly npmInstallDependencies     '@testing-library/user-event': '^12.6.0',
+52 silly npmInstallDependencies     '@types/react': '^17.0.0',
+52 silly npmInstallDependencies     '@typescript-eslint/eslint-plugin': '4.0.1',
+52 silly npmInstallDependencies     '@typescript-eslint/parser': '4.0.1',
+52 silly npmInstallDependencies     'babel-loader': '^8.1.0',
+52 silly npmInstallDependencies     'cross-env': '^7.0.3',
+52 silly npmInstallDependencies     eslint: '^7.10.0',
+52 silly npmInstallDependencies     'eslint-config-standard': '^14.1.1',
+52 silly npmInstallDependencies     'eslint-plugin-import': '^2.22.1',
+52 silly npmInstallDependencies     'eslint-plugin-node': '^11.1.0',
+52 silly npmInstallDependencies     'eslint-plugin-promise': '^4.2.1',
+52 silly npmInstallDependencies     'eslint-plugin-react': '^7.21.3',
+52 silly npmInstallDependencies     'eslint-plugin-standard': '^4.0.1',
+52 silly npmInstallDependencies     react: '^17.0.1',
+52 silly npmInstallDependencies     'react-docgen-typescript-loader': '^3.7.2',
+52 silly npmInstallDependencies     'react-dom': '^17.0.1',
+52 silly npmInstallDependencies     'react-icons': '^3.11.0',
+52 silly npmInstallDependencies     'ts-loader': '^6.2.2',
+52 silly npmInstallDependencies     'tsconfig-paths-webpack-plugin': '^3.3.0',
+52 silly npmInstallDependencies     typescript: '^4.0.3'
+52 silly npmInstallDependencies   },
+52 silly npmInstallDependencies   dependencies: {
+52 silly npmInstallDependencies     '@types/react-dom': '^17.0.0',
+52 silly npmInstallDependencies     '@types/theme-ui': '^0.3.7',
+52 silly npmInstallDependencies     'date-fns': '^2.16.1',
+52 silly npmInstallDependencies     theme: '^0.1.0',
+52 silly npmInstallDependencies     'theme-ui': '^0.3.5'
+52 silly npmInstallDependencies   }
+52 silly npmInstallDependencies }
+53 silly getExecOpts C:\Users\LevyMateusMacedo\Wokspace\wrc\packages\components undefined
+54 silly npmInstall [
+54 silly npmInstall   'yarn',
+54 silly npmInstall   [ 'install', '--mutex', 'network:42424', '--non-interactive' ]
+54 silly npmInstall ]
+55 silly npmInstallDependencies cleanup C:\Users\LevyMateusMacedo\Wokspace\wrc\packages\components\package.json
+56 error Error: ENOENT: no such file or directory, rename 'C:\Users\LevyMateusMacedo\Wokspace\wrc\packages\components\package.json.lerna_backup' -> 'C:\Users\LevyMateusMacedo\Wokspace\wrc\packages\components\package.json'
+56 error     at Object.renameSync (fs.js:660:3)
+56 error     at cleanup (C:\Users\LevyMateusMacedo\Wokspace\wrc\node_modules\@lerna\npm-install\npm-install.js:70:10)
+56 error     at done (C:\Users\LevyMateusMacedo\Wokspace\wrc\node_modules\@lerna\npm-install\npm-install.js:78:7)
+56 error     at C:\Users\LevyMateusMacedo\Wokspace\wrc\node_modules\@lerna\npm-install\npm-install.js:94:19
+56 error     at runMicrotasks (<anonymous>)
