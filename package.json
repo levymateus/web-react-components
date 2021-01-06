@@ -1,6 +1,6 @@
 {
   "name": "web-react-components",
-  "version": "1.0.1",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "license": "MIT",
   "author": "Levy Mateus Macedo",

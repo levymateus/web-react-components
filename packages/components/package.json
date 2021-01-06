@@ -1,6 +1,6 @@
 {
 	"name": "components",
-	"version": "1.0.1",
+	"version": "0.1.0",
 	"description": "Web react components core package",
 	"main": "src/index.ts",
 	"author": "levymateusmacedo@gmail.com",
