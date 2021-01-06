@@ -24,10 +24,10 @@
 		"allowJs": true,
 		"baseUrl": "./",
 		"paths": {
-			"@react-components/components": [
+			"@wrc/components": [
 				"./packages/components/src"
 			],
-			"@react-components/components/*": [
+			"@wrc/components/*": [
 				"./packages/components/src/*"
 			]
 		},
