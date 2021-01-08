@@ -29,7 +29,13 @@
 			],
 			"@wrc/components/*": [
 				"./packages/components/src/*"
-			]
+      ],
+      "@wrc/utils": [
+        "./packages/utils/src"
+      ],
+      "@wrc/utils/*": [
+        "./packages/utils/src/*"
+      ]
 		},
 		"strict": true,
 		"moduleResolution": "node",
