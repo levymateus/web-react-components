@@ -1,54 +1,26 @@
-import React, { useState, useEffect, useReducer, useCallback } from 'react'
-import { MdArrowUpward, MdArrowDownward } from 'react-icons/md'
 import { cx } from '@emotion/css'
-
-import format from 'date-fns/format'
-import subDays from 'date-fns/subDays'
+import { useHotkey } from '@wrc/utils/hooks'
 import addDays from 'date-fns/addDays'
-import subMonths from 'date-fns/subMonths'
 import addMonths from 'date-fns/addMonths'
+import format from 'date-fns/format'
 import isValid from 'date-fns/isValid'
-import startOfMonth from 'date-fns/startOfMonth'
-
-import { StateReducer, Action } from './contants'
-
-import { focus, isEqual } from './funcs'
-import { styles, Button } from './style'
-
-export interface Props {
-  /**
-   * The optional default start date. default value is now date.
-   */
-  defaultValue?: Date
-
-  /**
-   * The optional on change handler callback fired when an date is changed.
-   * @param date - The selected date.
-   */
-  onChange?: (date: Date) => void
-}
-
-const build = (start: Date): Date[] => {
-  const dates = new Array<Date>(42)
-  const month = { start: startOfMonth(start) }
-  dates[0] = subDays(month.start, month.start.getDay())
-  for (let index = 1; index < dates.length; index += 1) {
-    dates[index] = addDays(new Date(dates[index - 1]), 1)
-  }
-  return dates
-}
-
-export const initializer = (start: Date): Date[] => build(start)
-
-export const reducer = (_state: Date[], action: Action<string, unknown>): Date[] => build(action.payload as Date)
+import subDays from 'date-fns/subDays'
+import subMonths from 'date-fns/subMonths'
+import React, { useCallback, useEffect, useReducer, useState } from 'react'
+import { MdArrowDownward, MdArrowUpward } from 'react-icons/md'
+import { StateReducer } from './contants'
+import { focus, isEqual } from './utils'
+import { Button, styles } from './Calendar.style'
+import { CalendarProps } from './Calendar.types'
+import { reducer, initializer } from './utils'
 
 /**
  * A full custom uncontrollable calendar react component.
  */
-export const Calendar: React.FC<Props> = ({
+export const Calendar: React.FC<CalendarProps> = ({
   defaultValue = new Date(),
   onChange
-}: Props) => {
+}: CalendarProps) => {
   const [date, setDate] = useState(() => {
     if (defaultValue && isValid(defaultValue)) {
       return defaultValue
@@ -64,6 +36,8 @@ export const Calendar: React.FC<Props> = ({
     date,
     initializer
   )
+
+  useHotkey(() => console.log('test'), { ref: document, hotkey: { key: 'A' }})
 
   const handleKeyDown = useCallback(
     (evt: Event): void => {

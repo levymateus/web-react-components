@@ -1,39 +1,44 @@
-// prettier-ignore
 {
-	"exclude": [
-		"node_modules",
-		"dist"
-	],
-	"compilerOptions": {
-		"skipLibCheck": true,
-		"target": "es6",
-		"module": "es6",
-		"lib": [
-			"es6",
-			"dom"
-		],
-		"jsx": "react",
-		"declaration": true,
-		"declarationMap": true,
-		"sourceMap": true,
-		"outDir": "./dist",
-		"rootDirs": [
-			"./src",
-			"./stories"
-		],
-		"allowJs": true,
-		"baseUrl": "./",
-		"paths": {
-			"@wrc/components": [
-				"./packages/components/src"
-			],
-			"@wrc/components/*": [
-				"./packages/components/src/*"
-			]
-		},
-		"strict": true,
-		"moduleResolution": "node",
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-	}
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "es6",
+    "module": "es6",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "jsx": "react",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDirs": [
+      "./packages/components",
+      "./packages/utils"
+    ],
+    "allowJs": true,
+    "baseUrl": "./",
+    "paths": {
+      "@wrc/components": [
+        "./packages/components/src"
+      ],
+      "@wrc/components/*": [
+        "./packages/components/src/*"
+      ],
+      "@wrc/utils": [
+        "./packages/utils/src"
+      ],
+      "@wrc/utils/*": [
+        "./packages/utils/src/*"
+      ]
+    },
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  }
 }

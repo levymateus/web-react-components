@@ -1,0 +1,12 @@
+{
+  "name": "utils",
+  "version": "0.0.1",
+  "description": "web react components utils",
+  "main": "src/index.ts",
+  "repository": "https://github.com/levymateus/web-react-components",
+  "author": "Levy Mateus Macedo",
+  "license": "MIT",
+  "scripts": {
+    "bootstrap": "lerna bootstrap --use-workspaces"
+  }
+}

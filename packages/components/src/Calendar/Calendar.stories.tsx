@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta, Story } from '@storybook/react'
-import { Calendar, CalendarProps } from '@wrc/components'
+import { Calendar, CalendarProps } from './'
 
 export default {
   component: Calendar,

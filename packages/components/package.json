@@ -6,51 +6,14 @@
 	"author": "levymateusmacedo@gmail.com",
 	"license": "MIT",
 	"scripts": {
-		"start": "start-storybook -p 8080",
-		"test": "jest --passWithNoTests",
-		"test:watch": "jest --watch"
+    "bootstrap": "lerna bootstrap --use-workspaces"
 	},
-	"devDependencies": {
-		"@babel/plugin-proposal-class-properties": "^7.12.1",
-		"@babel/preset-env": "^7.12.11",
-		"@babel/preset-react": "^7.12.10",
-		"@emotion/css": "^11.0.0",
-		"@emotion/react": "^11.1.1",
-		"@emotion/styled": "^11.0.0",
-		"@storybook/addon-controls": "^6.0.28",
-		"@storybook/addon-docs": "^6.0.28",
-		"@storybook/addon-essentials": "^6.0.28",
-		"@storybook/addon-info": "^5.3.18",
-		"@storybook/react": "^6.0.3",
-		"@testing-library/jest-dom": "^5.11.8",
-		"@testing-library/react": "^11.2.2",
-		"@testing-library/user-event": "^12.6.0",
-		"@types/react": "^17.0.0",
-		"@types/react-dom": "^17.0.0",
-		"@types/theme-ui": "^0.3.7",
-		"@typescript-eslint/eslint-plugin": "4.0.1",
-		"@typescript-eslint/parser": "4.0.1",
-		"babel-loader": "^8.1.0",
-		"eslint": "^7.10.0",
-		"eslint-config-standard": "^14.1.1",
-		"eslint-plugin-import": "^2.22.1",
-		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-promise": "^4.2.1",
-		"eslint-plugin-react": "^7.21.3",
-		"eslint-plugin-standard": "^4.0.1",
-		"jest-prop-type-error": "^1.1.0",
-		"react": "^17.0.1",
-		"react-docgen-typescript-loader": "^3.7.2",
-		"react-dom": "^17.0.1",
-		"react-icons": "^3.11.0",
-		"ts-jest": "^26.4.4",
-		"ts-loader": "^6.2.2",
-		"tsconfig-paths-webpack-plugin": "^3.3.0",
-		"typescript": "^4.0.3"
-	},
-	"dependencies": {
-		"date-fns": "^2.16.1",
-		"theme": "^0.1.0",
-		"theme-ui": "^0.3.5"
-	}
+  "peerDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "date-fns": "^2.16.1",
+    "@emotion/css": "^11.1.3"
+  }
 }
