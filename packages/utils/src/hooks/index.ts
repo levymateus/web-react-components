@@ -1,1 +1,1 @@
-export { useHotkey } from './useHotkey'
+export * from './useHotkey'

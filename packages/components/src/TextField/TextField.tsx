@@ -1,20 +1,10 @@
-import React, { HTMLAttributes, useEffect, useMemo, useRef, useState } from 'react'
-import * as Style from './style'
-import { Status } from './TextField.types'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
+import * as Style from './TextField.style'
+import { Status, TextFieldProps } from './TextField.types'
 
-export interface Props extends HTMLAttributes<
-  Omit<HTMLInputElement, 'defaultValue' | 'maxLength'>
-> {
-  id: string;
-  label: string;
-  helperText?: string | null;
-  endIcon?: React.ReactNode | null;
-  maxLength?: number;
-  status?: Status;
-}
 
 export const TextField = React.forwardRef<
-  HTMLInputElement, Props
+  HTMLInputElement, TextFieldProps
 >(({
   id,
   label,

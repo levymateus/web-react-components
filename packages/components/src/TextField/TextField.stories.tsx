@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react'
-import { TextField, TextFieldProps } from '@wrc/components'
+import { TextField, TextFieldProps } from '.'
 import React from 'react'
 
 export default {

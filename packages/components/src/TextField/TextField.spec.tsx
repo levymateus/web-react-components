@@ -1,7 +1,6 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
-import TextField from '.'
-
+import TextField from './TextField'
 
 describe('TextField component test suit', () => {
   it('chars count with defaultValue renders correct', () => {

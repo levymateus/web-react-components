@@ -1,7 +1,7 @@
 import React from 'react'
-import { fireEvent, getByTestId, render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 
-import { Calendar } from '.'
+import { Calendar } from './Calendar'
 
 describe('Calendar component test suit', () => {
   it('events fired correctly', () => {
